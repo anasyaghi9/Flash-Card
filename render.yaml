@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: flash-card
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn FLASHCARDS2.wsgi:application
