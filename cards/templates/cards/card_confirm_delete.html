@@ -1,0 +1,19 @@
+{% extends "cards/base.html" %}
+
+{% block content %}
+    <article>
+        <h2>Delete Card</h2>
+
+        <p>Are you sure you want to delete this card?</p>
+
+        <blockquote>
+            <strong>{{ object.question }}</strong>
+        </blockquote>
+
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit">Yes, delete</button>
+            <a href="{% url 'card-list' %}" role="button">Cancel</a>
+        </form>
+    </article>
+{% endblock content %}
